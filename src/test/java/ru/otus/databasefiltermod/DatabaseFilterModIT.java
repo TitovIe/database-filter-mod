@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultActions;
 import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -53,7 +52,7 @@ public class DatabaseFilterModIT {
                 .active(Boolean.TRUE)
                 .competencies(new String[]{"back", "team_lead"})
                 .build();
-        employee1.addUserField(Role.builder()
+        employee1.addRole(Role.builder()
                 .name("admin")
                 .priority(1)
                 .aliases(new String[]{"main", "master"})
@@ -76,7 +75,7 @@ public class DatabaseFilterModIT {
                 .active(Boolean.TRUE)
                 .competencies(new String[]{"front", "scrum_master"})
                 .build();
-        employee2.addUserField(Role.builder()
+        employee2.addRole(Role.builder()
                 .name("prime_user")
                 .priority(2)
                 .aliases(new String[]{"main_user", "master_user"})
@@ -99,7 +98,7 @@ public class DatabaseFilterModIT {
                 .active(Boolean.FALSE)
                 .competencies(new String[]{"back", "front"})
                 .build();
-        employee3.addUserField(Role.builder()
+        employee3.addRole(Role.builder()
                 .name("user")
                 .priority(3)
                 .aliases(new String[]{"default", "minimal"})

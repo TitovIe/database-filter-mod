@@ -50,7 +50,7 @@ public class Employee extends BaseEntity {
     @Builder.Default
     private List<Contact> contacts = new ArrayList<>();
 
-    public void addUserField(Role role) {
+    public void addRole(Role role) {
         this.roles.add(role);
         role.getEmployees().add(this);
     }
